@@ -52,16 +52,26 @@ else
 	local timemove = 0.3
 	local logo = Material("se_logo.png")
 	local function semessage(scriptid, scname, id64, stname, reason)
+		local h = 220
 		local tm = CurTime()
 		local scrw = ScrW()
 		local scrh = ScrH()
 		local scname2 = Format("%s [%s]", stname, id64)
+		local scname = Format("%s [%s]", scname, scriptid)
 		local targettime = tm+timeshow-timemove
+		surface.SetFont( "SeTitle" )
+		local tbl = { surface.GetTextSize("Script name : " .. scname ),
+		surface.GetTextSize("Script Owner : " .. scname2),
+		surface.GetTextSize("Reason : " .. reason)}
+
+		for k, v in pairs(tbl) do
+			if v > w then w = v+50 end 
+		end
+
 		hook.Add("HUDPaint", "SEPopup", function()
 
 			local ypos = 150
-			local w = 600
-			local h = 200
+
 			local mid = scrw/2-(w/2)
 			if (tm+timemove > CurTime()) then
 				mid = math.Remap(CurTime()-tm,0,timemove,0,scrw/2-(w/2))
