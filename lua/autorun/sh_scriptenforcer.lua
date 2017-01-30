@@ -52,6 +52,7 @@ else
 	local timemove = 0.3
 	local logo = Material("se_logo.png")
 	local function semessage(scriptid, scname, id64, stname, reason)
+		local w = 600
 		local h = 220
 		local tm = CurTime()
 		local scrw = ScrW()
