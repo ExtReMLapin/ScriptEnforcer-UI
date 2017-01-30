@@ -101,7 +101,7 @@ else
 			draw.SimpleText(  reason ,"SeTitle",mid+115,ypos+175,cr,TEXT_ALIGN_LEFT,TEXT_ALIGN_CENTER)
 		end)
 
-		if CurTime() > (tm +timeshow)
+		if CurTime() > (tm +timeshow) then
 			hook.Remove("HUDPaint", "SEPopup")
 		end
 
