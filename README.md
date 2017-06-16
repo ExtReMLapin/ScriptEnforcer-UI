@@ -14,3 +14,9 @@ hook.Run("SEFailAuth", 2019, "Permanent Properties", "76561198001451981", "Lapin
 * Sexy anims
 * Sexy design
 * Only last denial is showed
+
+
+
+#License :
+
+Don't edit the code
